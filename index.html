@@ -1,0 +1,1490 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b3a">
+  <meta name="description" content="NOMAD DIGITAL : création et location de sites web modernes pour les entreprises, boutiques et entrepreneurs.">
+  <title>NOMAD DIGITAL — Création & Location de Sites Web</title>
+
+  <style>
+    :root {
+      --navy: #071b3a;
+      --blue: #1265e9;
+      --cyan: #48c6ff;
+      --light: #f4f8ff;
+      --white: #ffffff;
+      --text: #172943;
+      --muted: #66758c;
+      --border: #e2eaf5;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(10, 39, 82, .09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1140px, 92%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: #dbe9ff;
+      padding: 9px 0;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226,234,245,.85);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -.7px;
+      font-size: 19px;
+      white-space: nowrap;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 14px;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 8px 20px rgba(18,101,233,.22);
+      font-size: 23px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 3px;
+      margin-top: -4px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #42536c;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 20px;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), #3488ff);
+      box-shadow: 0 10px 24px rgba(18,101,233,.22);
+    }
+
+    .btn-outline {
+      color: var(--navy);
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      position: relative;
+      padding: 92px 0 84px;
+      background:
+        radial-gradient(ellipse at 88% 15%, rgba(72,198,255,.18), transparent 32%),
+        radial-gradient(ellipse at 4% 70%, rgba(18,101,233,.08), transparent 30%),
+        linear-gradient(180deg, #f7faff 0%, #fff 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eaf3ff;
+      color: var(--blue);
+      border: 1px solid #d7e8ff;
+      padding: 7px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      background: #18b978;
+      border-radius: 50%;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(39px, 5.2vw, 65px);
+      line-height: 1.08;
+      letter-spacing: -2.7px;
+      margin-bottom: 23px;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 520px;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .trust-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #64738a;
+      font-size: 12px;
+    }
+
+    .trust-check {
+      display: grid;
+      place-items: center;
+      background: #e5f8ef;
+      color: #07864e;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .showcase {
+      position: relative;
+      padding: 18px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #d9ebff, #f5f9ff 65%, #e5f7ff);
+      border: 1px solid #dcecff;
+    }
+
+    .browser {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 65px rgba(7,27,58,.15);
+      transform: rotate(1deg);
+    }
+
+    .browser-top {
+      height: 42px;
+      border-bottom: 1px solid #edf1f7;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      gap: 6px;
+    }
+
+    .browser-dot {
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background: #d7dfeb;
+    }
+
+    .browser-address {
+      flex: 1;
+      margin-left: 9px;
+      background: #f4f7fb;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 9px;
+      color: #8794a8;
+    }
+
+    .mockup {
+      padding: 23px;
+    }
+
+    .mock-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 27px;
+    }
+
+    .mock-logo {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .mock-logo-square {
+      width: 23px;
+      height: 23px;
+      background: var(--blue);
+      border-radius: 7px;
+    }
+
+    .mock-button {
+      padding: 7px 11px;
+      border-radius: 6px;
+      background: var(--blue);
+      color: white;
+      font-size: 9px;
+    }
+
+    .mock-label {
+      font-size: 9px;
+      color: var(--blue);
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .mock-title {
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.12;
+      color: var(--navy);
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .mock-text {
+      font-size: 10px;
+      color: #7b899e;
+      max-width: 240px;
+      margin-bottom: 16px;
+    }
+
+    .mock-cta {
+      background: var(--blue);
+      display: inline-block;
+      color: white;
+      padding: 8px 12px;
+      font-size: 9px;
+      font-weight: 800;
+      border-radius: 6px;
+    }
+
+    .mock-stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 9px;
+      margin-top: 25px;
+    }
+
+    .mock-stat {
+      background: #f4f8ff;
+      border-radius: 9px;
+      padding: 12px 8px;
+    }
+
+    .mock-stat strong {
+      display: block;
+      font-size: 13px;
+      color: var(--navy);
+    }
+
+    .mock-stat span {
+      display: block;
+      font-size: 8px;
+      color: #7b899e;
+    }
+
+    .float-card {
+      position: absolute;
+      bottom: -17px;
+      left: -20px;
+      padding: 13px 16px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .float-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: #e8f3ff;
+      font-size: 17px;
+    }
+
+    .section {
+      padding: 82px 0;
+    }
+
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 43px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 13px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(29px, 4vw, 43px);
+      letter-spacing: -1.4px;
+      line-height: 1.18;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 27px;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #eaf3ff;
+      color: var(--blue);
+      font-size: 24px;
+      margin-bottom: 21px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .service-link {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+    }
+
+    .step {
+      padding: 24px 20px;
+      border-left: 2px solid #cfe2ff;
+    }
+
+    .step-number {
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--blue);
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .order-section {
+      background:
+        radial-gradient(ellipse at 0% 100%, rgba(72,198,255,.12), transparent 35%),
+        var(--navy);
+      padding: 84px 0;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .order-intro h2 {
+      color: white;
+      font-size: clamp(31px,4vw,45px);
+    }
+
+    .order-intro > p {
+      color: #c0cee2;
+      font-size: 14px;
+      margin: 16px 0 25px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 13px;
+      padding: 13px;
+      color: white;
+      background: rgba(255,255,255,.04);
+    }
+
+    .contact-flag {
+      font-size: 24px;
+    }
+
+    .contact-item small {
+      display: block;
+      color: #b5c5dc;
+      font-size: 10px;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .form-card {
+      background: white;
+      padding: 30px;
+      border-radius: 23px;
+      box-shadow: 0 25px 65px rgba(0,0,0,.15);
+    }
+
+    .form-card h3 {
+      color: var(--navy);
+      font-size: 23px;
+      letter-spacing: -.5px;
+      margin-bottom: 5px;
+    }
+
+    .form-subtitle {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      min-width: 0;
+      margin-bottom: 16px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      display: block;
+      color: #293b55;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-width: 0;
+      padding: 12px 13px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      outline: none;
+      color: var(--text);
+      background: #fbfcff;
+      font-size: 12px;
+      transition: border .2s, box-shadow .2s;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(18,101,233,.09);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 105px;
+    }
+
+    .form-note {
+      font-size: 10px;
+      color: var(--muted);
+      margin: 12px 0 17px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      font-size: 13px;
+    }
+
+    .form-error {
+      display: none;
+      color: #b42318;
+      background: #fff0ef;
+      border-radius: 9px;
+      padding: 10px;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+
+    .faq-list {
+      max-width: 760px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    details p {
+      padding-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .final-cta {
+      padding: 58px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #eaf3ff, #f8fcff);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(27px,4vw,39px);
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 23px;
+    }
+
+    footer {
+      background: #05142c;
+      color: white;
+      padding: 37px 0 22px;
+    }
+
+    .footer-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding-bottom: 25px;
+    }
+
+    .footer-main .brand {
+      color: white;
+    }
+
+    .footer-main .brand small {
+      color: #9fb0c9;
+    }
+
+    .footer-description {
+      color: #9fb0c9;
+      font-size: 11px;
+      max-width: 330px;
+      margin-top: 9px;
+    }
+
+    .footer-contacts {
+      display: grid;
+      gap: 8px;
+      font-size: 12px;
+      color: #dce8fa;
+    }
+
+    .footer-contacts a:hover {
+      color: var(--cyan);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 10px;
+      color: #9fb0c9;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 60;
+      width: 57px;
+      height: 57px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #20c56b;
+      color: white;
+      font-size: 27px;
+      box-shadow: 0 9px 25px rgba(0,0,0,.2);
+      transition: transform .2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.07);
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        gap: 14px;
+      }
+
+      .hero-grid,
+      .order-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .hero-copy {
+        max-width: 650px;
+      }
+
+      .showcase {
+        max-width: 550px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        min-height: 70px;
+      }
+
+      .brand {
+        font-size: 16px;
+      }
+
+      .brand-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      nav a:not(.nav-order) {
+        display: none;
+      }
+
+      .nav-order {
+        font-size: 11px;
+        padding: 10px 12px;
+      }
+
+      .hero {
+        padding: 53px 0 60px;
+      }
+
+      h1 {
+        letter-spacing: -1.8px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .section {
+        padding: 62px 0;
+      }
+
+      .service-grid,
+      .steps-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 23px;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .form-card {
+        padding: 21px 17px;
+      }
+
+      .order-section {
+        padding: 60px 0;
+      }
+
+      .mockup {
+        padding: 17px;
+      }
+
+      .float-card {
+        left: -5px;
+      }
+
+      .footer-main {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    🌐 NOMAD DIGITAL — Votre présence en ligne commence ici.
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#accueil" aria-label="NOMAD DIGITAL, accueil">
+        <span class="brand-icon">N</span>
+        <span>
+          NOMAD DIGITAL
+          <small>WEB • DESIGN • DIGITAL</small>
+        </span>
+      </a>
+
+      <nav aria-label="Navigation principale">
+        <a href="#services">Services</a>
+        <a href="#fonctionnement">Comment ça marche</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary nav-order" href="#commande">Commander ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Votre partenaire digital
+          </div>
+
+          <h1>
+            Donnez vie à vos idées <span>sur le web.</span>
+          </h1>
+
+          <p class="hero-description">
+            Vous avez un business, une marque ou un projet ?
+            NOMAD DIGITAL vous accompagne avec des sites web modernes,
+            élégants et adaptés à vos objectifs — en création comme en location.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#commande">
+              🚀 Créer mon site
+            </a>
+            <a class="btn btn-outline" href="#services">
+              Découvrir nos services →
+            </a>
+          </div>
+
+          <div class="trust-line">
+            <span class="trust-check">✓</span>
+            <span>Un projet personnalisé, discuté directement avec notre équipe.</span>
+          </div>
+        </div>
+
+        <div class="showcase" aria-label="Aperçu d'un design de site web">
+          <div class="browser">
+            <div class="browser-top">
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <div class="browser-address">votre-marque.com</div>
+            </div>
+
+            <div class="mockup">
+              <div class="mock-nav">
+                <div class="mock-logo">
+                  <span class="mock-logo-square"></span>
+                  VOTRE MARQUE
+                </div>
+                <span class="mock-button">Nous contacter</span>
+              </div>
+
+              <div class="mock-label">BIENVENUE CHEZ VOUS</div>
+              <div class="mock-title">
+                Votre vision.<br>Notre expertise.
+              </div>
+              <p class="mock-text">
+                Une expérience en ligne pensée pour présenter
+                votre activité et attirer vos clients.
+              </p>
+              <span class="mock-cta">Découvrir nos services →</span>
+
+              <div class="mock-stats">
+                <div class="mock-stat">
+                  <strong>Design</strong>
+                  <span>Élégant</span>
+                </div>
+                <div class="mock-stat">
+                  <strong>Mobile</strong>
+                  <span>Adapté</span>
+                </div>
+                <div class="mock-stat">
+                  <strong>Web</strong>
+                  <span>Moderne</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card">
+            <span class="float-icon">✦</span>
+            <span>Votre projet mérite<br>une belle présence en ligne.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Nos solutions</div>
+          <h2>Le digital au service de vos ambitions.</h2>
+          <p>
+            Que vous démarriez ou que vous développiez votre activité,
+            choisissez la solution qui correspond à votre projet.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon">✧</div>
+            <h3>Création de sites web</h3>
+            <p>
+              Un site conçu selon votre marque, vos besoins et votre public :
+              présentation professionnelle, services ou site vitrine.
+            </p>
+            <a class="service-link" href="#commande"
+               data-kind="Création de site web">
+              Présenter mon projet →
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">↗</div>
+            <h3>Location de sites web</h3>
+            <p>
+              Louez un site selon les conditions convenues avec notre équipe.
+              La disponibilité, le prix et les services inclus sont à confirmer.
+            </p>
+            <a class="service-link" href="#commande"
+               data-kind="Location de site web">
+              Demander une location →
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">▦</div>
+            <h3>Boutiques en ligne</h3>
+            <p>
+              Présentez vos produits avec des pages claires, un catalogue
+              attractif et un parcours de commande adapté à votre activité.
+            </p>
+            <a class="service-link" href="#commande"
+               data-kind="Boutique en ligne">
+              Créer ma boutique →
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⌘</div>
+            <h3>Sites sur mesure</h3>
+            <p>
+              Un projet spécifique ? Décrivez vos idées et les fonctionnalités
+              souhaitées afin que nous puissions étudier votre demande.
+            </p>
+            <a class="service-link" href="#commande"
+               data-kind="Site sur mesure">
+              Décrire mon idée →
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">◈</div>
+            <h3>Sites professionnels</h3>
+            <p>
+              Une présence en ligne pour présenter votre entreprise,
+              vos coordonnées, vos prestations et votre identité.
+            </p>
+            <a class="service-link" href="#commande"
+               data-kind="Site professionnel">
+              Parler de mon entreprise →
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⚙</div>
+            <h3>Amélioration de site</h3>
+            <p>
+              Expliquez-nous ce que vous souhaitez modifier ou améliorer.
+              Les possibilités seront étudiées selon votre site.
+            </p>
+            <a class="service-link" href="#commande"
+               data-kind="Amélioration de site existant">
+              Demander une amélioration →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="fonctionnement">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Simple et pratique</div>
+          <h2>De votre idée à votre projet web.</h2>
+          <p>
+            Un processus clair pour discuter de votre besoin avant de démarrer.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step">
+            <div class="step-number">ÉTAPE 01</div>
+            <h3>Décrivez votre projet</h3>
+            <p>
+              Remplissez le formulaire avec le type de site, votre budget
+              indicatif et les fonctionnalités souhaitées.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">ÉTAPE 02</div>
+            <h3>Échangeons sur WhatsApp</h3>
+            <p>
+              Votre demande est préparée dans un message. Vous pourrez
+              l'envoyer au numéro WhatsApp choisi.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">ÉTAPE 03</div>
+            <h3>Confirmez les conditions</h3>
+            <p>
+              Discutez du prix, du délai, des modalités de paiement et des
+              services inclus avant tout engagement.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="order-section" id="commande">
+      <div class="container order-grid">
+        <div class="order-intro">
+          <div class="eyebrow">Parlons de votre idée</div>
+          <h2>Prêt à lancer votre projet digital ?</h2>
+          <p>
+            Envoyez-nous les informations essentielles de votre projet.
+            Choisissez ensuite le contact WhatsApp du Mali ou du Maroc.
+          </p>
+
+          <div class="contact-list">
+            <a class="contact-item"
+               href="https://wa.me/22393426701"
+               target="_blank" rel="noopener noreferrer">
+              <span class="contact-flag">🇲🇱</span>
+              <span>
+                <small>WHATSAPP — MALI</small>
+                <strong>+223 934 267 01 ↗</strong>
+              </span>
+            </a>
+
+            <a class="contact-item"
+               href="https://wa.me/212768574203"
+               target="_blank" rel="noopener noreferrer">
+              <span class="contact-flag">🇲🇦</span>
+              <span>
+                <small>WHATSAPP — MAROC</small>
+                <strong>+212 768 574 203 ↗</strong>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Votre demande de projet</h3>
+          <p class="form-subtitle">
+            Complétez les champs ci-dessous pour préparer votre message.
+          </p>
+
+          <form id="orderForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="fullname">Nom ou entreprise *</label>
+                <input id="fullname" name="fullname" type="text"
+                       placeholder="Votre nom" maxlength="100" required>
+              </div>
+
+              <div class="field">
+                <label for="country">Votre pays *</label>
+                <select id="country" name="country" required>
+                  <option value="">Choisir un pays</option>
+                  <option>Mali</option>
+                  <option>Maroc</option>
+                  <option>Niger</option>
+                  <option>Sénégal</option>
+                  <option>Côte d'Ivoire</option>
+                  <option>Burkina Faso</option>
+                  <option>France</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="kind">Type de projet *</label>
+                <select id="kind" name="kind" required>
+                  <option value="">Choisir un service</option>
+                  <option>Création de site web</option>
+                  <option>Location de site web</option>
+                  <option>Boutique en ligne</option>
+                  <option>Site sur mesure</option>
+                  <option>Site professionnel</option>
+                  <option>Amélioration de site existant</option>
+                  <option>Autre projet</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="budget">Budget indicatif</label>
+                <select id="budget" name="budget">
+                  <option value="">À discuter</option>
+                  <option>Moins de 25 000 FCFA</option>
+                  <option>25 000 à 50 000 FCFA</option>
+                  <option>50 000 à 100 000 FCFA</option>
+                  <option>Plus de 100 000 FCFA</option>
+                  <option>Budget en dirhams marocains</option>
+                  <option>À discuter avec l'équipe</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="deadline">Délai souhaité</label>
+                <select id="deadline" name="deadline">
+                  <option value="">À discuter</option>
+                  <option>Le plus rapidement possible</option>
+                  <option>Dans la semaine</option>
+                  <option>Dans les deux semaines</option>
+                  <option>Dans le mois</option>
+                  <option>Pas de délai précis</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="payment">Paiement préféré</label>
+                <select id="payment" name="payment">
+                  <option value="">À discuter</option>
+                  <option>Orange Money</option>
+                  <option>Moov Money</option>
+                  <option>Virement bancaire</option>
+                  <option>Autre / à discuter</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="description">Décrivez votre projet *</label>
+                <textarea id="description" name="description"
+                          maxlength="3000" required
+                          placeholder="Ex. : je souhaite un site pour mon entreprise, une boutique avec des produits, un formulaire de commande..."></textarea>
+              </div>
+
+              <div class="field full">
+                <label for="contact">Votre numéro ou moyen de contact (facultatif)</label>
+                <input id="contact" name="contact" type="text"
+                       maxlength="100"
+                       placeholder="Indicatif du pays + numéro">
+              </div>
+
+              <div class="field full">
+                <label for="whatsapp">Où souhaitez-vous envoyer votre demande ? *</label>
+                <select id="whatsapp" name="whatsapp" required>
+                  <option value="">Choisir un contact WhatsApp</option>
+                  <option value="22393426701">🇲🇱 Mali — +223 934 267 01</option>
+                  <option value="212768574203">🇲🇦 Maroc — +212 768 574 203</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="form-note">
+              En cliquant sur le bouton, WhatsApp s'ouvrira avec votre demande
+              préremplie. Vous devrez confirmer l'envoi dans WhatsApp.
+              Aucun paiement n'est effectué sur ce site.
+            </p>
+
+            <div class="form-error" id="formError" role="alert">
+              Vérifiez les champs obligatoires avant de continuer.
+            </div>
+
+            <button class="btn btn-primary submit-btn" type="submit">
+              Envoyer ma demande sur WhatsApp ↗
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Questions fréquentes</div>
+          <h2>Vous souhaitez en savoir plus ?</h2>
+          <p>Voici quelques informations avant de nous contacter.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Combien coûte la création d'un site web ?</summary>
+            <p>
+              Le prix dépend du type de site, du nombre de pages et des
+              fonctionnalités. Décrivez votre besoin pour discuter d'un devis.
+            </p>
+          </details>
+
+          <details>
+            <summary>Comment fonctionne la location d'un site web ?</summary>
+            <p>
+              Les conditions de location, le tarif, la durée, la maintenance
+              et les responsabilités doivent être confirmés directement avant
+              tout accord.
+            </p>
+          </details>
+
+          <details>
+            <summary>Comment envoyer une commande ?</summary>
+            <p>
+              Remplissez le formulaire, choisissez le contact WhatsApp du Mali
+              ou du Maroc, puis confirmez l'envoi du message dans WhatsApp.
+            </p>
+          </details>
+
+          <details>
+            <summary>Quels moyens de paiement sont proposés ?</summary>
+            <p>
+              Vous pouvez indiquer Orange Money, Moov Money, le virement
+              bancaire ou une autre option à discuter. Les coordonnées et
+              conditions de paiement seront confirmées avant tout règlement.
+            </p>
+          </details>
+
+          <details>
+            <summary>Le site accepte-t-il directement les paiements ?</summary>
+            <p>
+              Non. Cette version sert à présenter les services et à envoyer
+              les demandes via WhatsApp. Elle ne traite pas les paiements
+              et ne stocke pas les commandes dans une base de données.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <h2>Votre prochaine idée mérite un site web.</h2>
+        <p>Parlons ensemble de votre projet avec NOMAD DIGITAL.</p>
+        <a class="btn btn-primary" href="#commande">Démarrer mon projet →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <a class="brand" href="#accueil">
+            <span class="brand-icon">N</span>
+            <span>
+              NOMAD DIGITAL
+              <small>WEB • DESIGN • DIGITAL</small>
+            </span>
+          </a>
+          <p class="footer-description">
+            Création et location de sites web pour donner une présence
+            numérique à vos idées et à votre activité.
+          </p>
+        </div>
+
+        <div class="footer-contacts">
+          <strong>Contact WhatsApp</strong>
+          <a href="https://wa.me/22393426701"
+             target="_blank" rel="noopener noreferrer">
+            🇲🇱 Mali : +223 934 267 01
+          </a>
+          <a href="https://wa.me/212768574203"
+             target="_blank" rel="noopener noreferrer">
+            🇲🇦 Maroc : +212 768 574 203
+          </a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> NOMAD DIGITAL. Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/22393426701"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contacter NOMAD DIGITAL sur WhatsApp">
+    ☎
+  </a>
+
+  <script>
+    // Les deux seuls numéros WhatsApp utilisés sur ce site.
+    const WHATSAPP_MALI = "22393426701";
+    const WHATSAPP_MAROC = "212768574203";
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Préremplir le type de projet quand le visiteur clique sur un service.
+    document.querySelectorAll("[data-kind]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        const kindSelect = document.getElementById("kind");
+        kindSelect.value = link.dataset.kind;
+      });
+    });
+
+    // Préparer une demande et ouvrir WhatsApp au numéro choisi.
+    document.getElementById("orderForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const errorBox = document.getElementById("formError");
+      errorBox.style.display = "none";
+
+      if (!form.checkValidity()) {
+        errorBox.style.display = "block";
+        form.reportValidity();
+        return;
+      }
+
+      const data = new FormData(form);
+
+      const name = String(data.get("fullname") || "").trim();
+      const country = String(data.get("country") || "").trim();
+      const kind = String(data.get("kind") || "").trim();
+      const budget = String(data.get("budget") || "À discuter").trim();
+      const deadline = String(data.get("deadline") || "À discuter").trim();
+      const payment = String(data.get("payment") || "À discuter").trim();
+      const description = String(data.get("description") || "").trim();
+      const contact = String(data.get("contact") || "").trim();
+      const selectedNumber = String(data.get("whatsapp") || "");
+
+      if (!name || !country || !kind || !description) {
+        errorBox.style.display = "block";
+        return;
+      }
+
+      // Vérifier que le numéro choisi est l'un des deux numéros officiels.
+      const allowedNumbers = [WHATSAPP_MALI, WHATSAPP_MAROC];
+
+      if (!allowedNumbers.includes(selectedNumber)) {
+        errorBox.textContent =
+          "Choisissez le contact WhatsApp du Mali ou du Maroc.";
+        errorBox.style.display = "block";
+        return;
+      }
+
+      const message = [
+        "Bonjour NOMAD DIGITAL ! 👋",
+        "",
+        "Je souhaite vous contacter pour un projet web.",
+        "",
+        "📌 INFORMATIONS DU PROJET",
+        "Nom / entreprise : " + name,
+        "Pays : " + country,
+        "Service : " + kind,
+        "Budget indicatif : " + budget,
+        "Délai souhaité : " + deadline,
+        "Paiement préféré : " + payment,
+        "Mon contact : " + (contact || "Non renseigné"),
+        "",
+        "📝 DESCRIPTION DU PROJET",
+        description,
+        "",
+        "Merci de me communiquer vos tarifs et vos conditions."
+      ].join("\n");
+
+      const whatsappURL =
+        "https://wa.me/" + selectedNumber +
+        "?text=" + encodeURIComponent(message);
+
+      // Le clic sur le bouton déclenche directement l'ouverture de WhatsApp.
+      window.location.href = whatsappURL;
+    });
+  </script>
+</body>
+</html>
